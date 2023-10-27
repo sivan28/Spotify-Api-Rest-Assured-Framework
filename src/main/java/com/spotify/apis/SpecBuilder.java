@@ -16,12 +16,13 @@ public class SpecBuilder {
 
     public static RequestSpecification getRequestSpecification() {
         return new RequestSpecBuilder()
-                .setBaseUri("https://api.spotify.com")
+              //  .setBaseUri("https://api.spotify.com")
+                .setBaseUri(System.getProperty("BASE_URI"))
                 .setBasePath(EndPoints.BASE_PATH)
                 .addHeader("Authorization", "Bearer " + TokenManager.getAccessToken())
                 .setContentType(ContentType.JSON)
                 .log(LogDetail.ALL)
-                .build();
+                .build();g
     }
 
     public static ResponseSpecification getResponseSpecification(){

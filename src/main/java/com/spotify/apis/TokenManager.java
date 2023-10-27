@@ -29,7 +29,7 @@ public class TokenManager {
             return response;
     }
 
-    public static String getAccessToken() {
+    public synchronized static String getAccessToken() {
         if(access_token == null || Instant.now().isAfter(expiry_time)){
             access_token = renewAccessToken().path("access_token");
             expiry_time = Instant.now().plusSeconds(3600 - 200);
