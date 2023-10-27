@@ -22,7 +22,7 @@ public class SpecBuilder {
                 .addHeader("Authorization", "Bearer " + TokenManager.getAccessToken())
                 .setContentType(ContentType.JSON)
                 .log(LogDetail.ALL)
-                .build();g
+                .build();
     }
 
     public static ResponseSpecification getResponseSpecification(){
